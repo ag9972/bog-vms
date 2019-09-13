@@ -1,1 +1,1 @@
-# bos-vms
+# bogs-vms
