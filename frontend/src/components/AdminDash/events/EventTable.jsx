@@ -15,12 +15,8 @@ const Styled = {
 };
 
 const EventTable = ({ events, loading }) => {
-<<<<<<< HEAD
-  const [showEditModal, setShowEditModal] = useState([]);
-=======
   const [showEditModal, setShowEditModal] = useState(false);
   const [currEvent, setCurrEvent] = useState(null)
->>>>>>> 487540453fb3034ece2ee795b629070d3eea6e28
 
   const onEditClicked = (event) => {
     setShowEditModal(true);

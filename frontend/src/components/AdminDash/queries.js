@@ -45,4 +45,4 @@ export const fetchEvents = () => axios.get('/api/events');
 
 export const createEvent = event => axios.post('/api/events', event);
 
-export const updateEvent = () => axios.put('/api/events');
+export const updateEvent = event => axios.put('/api/events', event);

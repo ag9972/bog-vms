@@ -69,6 +69,7 @@ const EventEditModal = ({ open, toggle, event }) => {
             external_links: values.external_links ? [values.external_links] : undefined
           };
           setSubmitting(true);
+          console.log(event);
           updateEvent(event)
             .then(() => toggle())
             .catch(console.log)
