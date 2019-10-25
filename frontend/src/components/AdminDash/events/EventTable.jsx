@@ -15,10 +15,16 @@ const Styled = {
 };
 
 const EventTable = ({ events, loading }) => {
+<<<<<<< HEAD
   const [showEditModal, setShowEditModal] = useState([]);
+=======
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [currEvent, setCurrEvent] = useState(null)
+>>>>>>> 487540453fb3034ece2ee795b629070d3eea6e28
 
-  const onEditClicked = () => {
+  const onEditClicked = (event) => {
     setShowEditModal(true);
+    setCurrEvent(event);
   };
   const toggleEditModal = () => {
     setShowEditModal(prev => !prev);
@@ -57,7 +63,7 @@ const EventTable = ({ events, loading }) => {
                 </td>
                 <td>{event.volunteers.length + ' / ' + event.max_volunteers}</td>
                 <td>
-                  <Styled.Button onClick={onEditClicked}>
+                  <Styled.Button onClick={() => onEditClicked(event)}>
                     <Icon color="grey3" name="create" />
                   </Styled.Button>
                 </td>
@@ -66,7 +72,7 @@ const EventTable = ({ events, loading }) => {
         </tbody>
       </Table.Table>
       {loading && <Loading />}
-      <EventEditModal open={showEditModal} toggle={toggleEditModal} />
+      <EventEditModal open={showEditModal} toggle={toggleEditModal} event={currEvent}/>
     </Table.Container>
   );
 };
