@@ -46,7 +46,9 @@ router.delete('/', EVENT_VALIDATOR, (req, res, next) => {
     EventData.findOneAndDelete(
         {id : event.id}
     ).then(()=>
-        console.log
+        res.json({
+            message: 'Event successfully deleted!'
+        })
     );
 });
 
@@ -60,10 +62,17 @@ router.put('/', EVENT_VALIDATOR, (req, res, next) => {
     const editEvent = new EventData(updateEventData);
     EventData.findOneAndUpdate(
         {id : editEvent.id},
-        updateEventData,
-        {new : true},
+        {$set : updateEventData},
+        function (err, obj) {
+            if (err) console.log;
+            else {
+                console.log(obj);
+            }
+        }
     ).then(()=>
-        console.log
+        res.json({
+            message: 'Event successfully edited!'
+        })
     ).catch(err => {
         next(err)
     });

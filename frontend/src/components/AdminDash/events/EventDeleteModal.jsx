@@ -68,9 +68,8 @@ const EventDeleteModal = ({ open, toggle, event }) => {
                         ...values
                     };
                     setSubmitting(true);
-                    deleteEvent(event);
-                    toggle();
-                        // .then(() => toggle())
+                    deleteEvent(event)
+                        .then(() => toggle());
                         // .catch(console.log)
                         // .finally(() => setSubmitting(false));
                 }}

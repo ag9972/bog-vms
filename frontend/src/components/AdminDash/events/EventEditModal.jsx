@@ -73,12 +73,11 @@ const EventEditModal = ({ open, toggle, event }) => {
           };
           console.log(event);
           setSubmitting(true);
-          editEvent(event);
-            // .then(() => toggle())
+          editEvent(event)
+            .then(() => toggle())
             //   .then(open => !open || console.log("here"))
             // .catch(console.log)
             // .finally(() => setSubmitting(false) || con1sole.log("abc"));
-            toggle();
         }}
         validationSchema={EventValidator}
         render={({ handleSubmit, isValid, isSubmitting, values, setFieldValue, handleBlur}) => (
