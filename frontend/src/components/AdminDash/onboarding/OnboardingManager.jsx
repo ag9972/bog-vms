@@ -15,10 +15,10 @@ const Styled = {
     align-items: space-around;
   `,
   HorizontalContainer: styled.div`
-    width: 100%;
     display: flex;
     flex-direction: row; 
     margin-left: 5rem;
+    justify-content: stretch;
   `,
   ImgContainer: styled.div`
     display: flex;
@@ -64,12 +64,12 @@ const Onboarding1 = () => {
       <Styled.TxtContainer style={{ marginLeft: '5rem', marginTop: "2rem"}}>
         <legend>Account Information</legend>
       </Styled.TxtContainer>
-      <Form style={{ width: '100%' }}>
-        <Styled.HorizontalContainer style={{ justifyContent: "space-evenly"}}>
-          <FormGroup style={{ border: 'none' }}>
+      <Form>
+        <Styled.HorizontalContainer style={{ justifyContent: "stretch"}}>
+          <FormGroup style={{ border: 'none', flex: "1", margin: "10px" }}>
             <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
           </FormGroup>
-          <FormGroup>
+          <FormGroup style = {{ flex: "1"}}>
             <Input type="password" name="password" id="examplePassword" placeholder="Password" />
           </FormGroup>
         </Styled.HorizontalContainer>
